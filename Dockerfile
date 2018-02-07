@@ -32,7 +32,7 @@ RUN apt-get update && apt-get install -y sudo vim net-tools ssh wget build-essen
 	pip install setuptools && pip install MySQL-python 
 RUN apt-get install libcurl4-openssl-dev
 RUN git clone https://github.com/jerryz920/mysql-router /opt/mysql-router && \
-	cd /opt/mysql-router && git checkout dev && mkdir build && \
+	cd /opt/mysql-router && git checkout -b dev --track remotes/origin/dev && mkdir build && \
 	cd build && cmake .. && \
 	make -j && \
 	make install
